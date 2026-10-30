@@ -1,0 +1,6 @@
+{
+  "name": "KisanSetu",
+  "description": "Multilingual farm management application for Indian farmers to manage farms, crops, ledger, tasks, and inventory.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

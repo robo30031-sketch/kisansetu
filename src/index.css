@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: #176B43;
+    --color-primary-dark: #104C2F;
+    --color-secondary: #3F8F52;
+    --color-bg: #F7F8F0;
+    --color-card: #FFFFFF;
+    --color-text-main: #1D3027;
+    --color-text-muted: #65746A;
+    --color-warning: #C88716;
+    --color-error: #B83B35;
+    --color-success: #287A46;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    font-family: 'Plus Jakarta Sans', 'Noto Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  [dir="rtl"] {
+    font-family: 'Noto Sans', 'Noto Nastaliq Urdu', Tahoma, Arial, sans-serif;
+    text-align: right;
+  }
+}
+
+/* Custom utility colors */
+.bg-cream {
+  background-color: #F7F8F0;
+}
+.bg-forest-900 {
+  background-color: #0E3B24;
+}
+.bg-forest-800 {
+  background-color: #176B43;
+}
+.bg-forest-700 {
+  background-color: #1F7C50;
+}
+.bg-leaf-600 {
+  background-color: #3F8F52;
+}
+.bg-leaf-100 {
+  background-color: #E6F3EA;
+}
+.bg-leaf-50 {
+  background-color: #F0F8F3;
+}
+.text-forest-900 {
+  color: #104C2F;
+}
+.text-forest-800 {
+  color: #176B43;
+}
+.text-leaf-700 {
+  color: #2F7540;
+}
+.text-main {
+  color: #1D3027;
+}
+.text-muted {
+  color: #65746A;
+}
+.border-forest-200 {
+  border-color: #D3E6DC;
+}
+.border-forest-800 {
+  border-color: #176B43;
+}
+
+/* Smooth touch targets */
+button, a, input, select, textarea {
+  touch-action: manipulation;
+}
+
+/* Clean scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F8F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4D7CC;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9DBAA9;
+}

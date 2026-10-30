@@ -1,0 +1,1036 @@
+# BUILD KISANSETU — COMPLETE MULTILINGUAL FARM MANAGEMENT WEB APPLICATION
+
+You are an expert full-stack software engineer, product designer, database architect, and accessibility-focused UX developer.
+
+Build a complete, functional, production-minded web application named **KisanSetu** that helps farmers across India manage their farms, crops, expenses, farming tasks, and inventory.
+
+This must be a real working application, not a static UI mockup.
+
+## 1. PRODUCT VISION
+
+Product name: KisanSetu
+
+Tagline: "Your Farm. Your Records. Your Control."
+
+Purpose:
+Help Indian farmers maintain organized farm records, calculate recorded expenses and income, manage crop cycles, remember farming tasks, and track farming supplies through a simple and approachable mobile-first application.
+
+Target audience:
+- Small and marginal farmers
+- Medium and large farmers
+- Farmers who prefer regional languages
+- Farmers with limited reading or digital experience
+- Farmers managing multiple fields or crops
+- Families who help maintain farm records
+
+Core principles:
+1. Make common actions understandable without technical knowledge.
+2. Design for smartphones first.
+3. Respect farmers' existing paper notebooks and working practices.
+4. Display information honestly and calculate it accurately.
+5. Use plain language, recognizable icons, and large touch targets.
+6. Support all 22 languages listed in the Indian Constitution's Eighth Schedule.
+7. Protect private farm and financial records.
+8. Do not require paid AI APIs or AI services.
+
+IMPORTANT: The application itself MUST NOT contain AI functionality.
+
+Do not add:
+- Gemini API calls
+- AI chatbots
+- AI-generated farming advice
+- AI recommendations
+- OpenAI API calls
+- AI crop diagnosis
+- AI-generated predictions
+- AI-based decisions
+
+Implement functionality through ordinary TypeScript, React, PostgreSQL queries, form validation, and deterministic calculations.
+
+Google AI Studio is being used only as the development tool. The finished KisanSetu application must not depend on an AI API.
+
+## 2. REQUIRED TECHNOLOGY STACK
+
+Use the following stack:
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Supabase PostgreSQL database
+- Supabase Auth
+- @supabase/supabase-js
+- i18next and react-i18next for localization
+- Lucide React for icons
+- Recharts for simple financial charts
+- Standard Intl APIs for dates and number formatting
+
+Use a clean, component-based architecture.
+
+Separate:
+- Page components
+- Reusable UI components
+- Authentication
+- Supabase client configuration
+- Database services
+- Form validation
+- Calculations
+- Localization resources
+- Shared types
+- Layout and navigation
+
+Do not place the entire application in a single component.
+
+Use strict TypeScript types and avoid unnecessary dependencies.
+
+## 3. BRAND IDENTITY AND VISUAL DESIGN
+
+Create a polished, modern, welcoming agricultural software interface.
+
+Brand personality:
+- Trustworthy
+- Rural-friendly
+- Calm
+- Practical
+- Accessible
+- Professional
+- Indian agricultural identity without excessive decoration
+
+Color palette:
+- Primary forest green: #176B43
+- Secondary leaf green: #3F8F52
+- Light cream background: #F7F8F0
+- White cards: #FFFFFF
+- Main text: #1D3027
+- Secondary text: #65746A
+- Warning: #C88716
+- Error: #B83B35
+- Success: #287A46
+
+Use green as the primary brand color, but maintain sufficient contrast.
+
+Logo:
+Create a simple original KisanSetu logo featuring a growing plant or connected fields. It should look professional at small sizes and work on a white or green background.
+
+Use "KisanSetu" as the exact displayed product name.
+
+Design requirements:
+- Mobile-first responsive layout.
+- Comfortable spacing and readable text.
+- Large buttons and touch targets.
+- Clear icons paired with text labels.
+- Simple forms with as few fields as practical.
+- Consistent card styles, borders, typography, and spacing.
+- Soft shadows used sparingly.
+- Clear focus states.
+- Accessible contrast.
+- Helpful empty states.
+- No unnecessary animations.
+- No excessive gradients, glassmorphism, or distracting effects.
+- Avoid layouts that resemble a complex corporate analytics dashboard.
+
+Use real SVG icons rather than emoji as the primary interface icons.
+
+Do not rely on images for core functionality.
+
+## 4. MULTILINGUAL SUPPORT — ALL 22 LANGUAGES
+
+Provide a language selector during onboarding and in the settings page.
+
+Support these 22 languages:
+
+1. Assamese
+2. Bengali
+3. Bodo
+4. Dogri
+5. Gujarati
+6. Hindi
+7. Kannada
+8. Kashmiri
+9. Konkani
+10. Maithili
+11. Malayalam
+12. Manipuri (Meitei)
+13. Marathi
+14. Nepali
+15. Odia
+16. Punjabi
+17. Sanskrit
+18. Santali
+19. Sindhi
+20. Tamil
+21. Telugu
+22. Urdu
+
+Use stable language codes and maintain separate resource files for every language.
+
+Create a localization directory with the following structure or an equivalent maintainable structure:
+
+src/locales/
+  en/
+  as/
+  bn/
+  brx/
+  doi/
+  gu/
+  hi/
+  kn/
+  ks/
+  kok/
+  mai/
+  ml/
+  mni/
+  mr/
+  ne/
+  or/
+  pa/
+  sa/
+  sat/
+  sd/
+  ta/
+  te/
+  ur/
+
+English may serve as a development fallback but must not be the only genuinely translated interface.
+
+Requirements:
+- Translate navigation labels.
+- Translate forms and form placeholders.
+- Translate validation errors.
+- Translate authentication screens.
+- Translate confirmations and error messages.
+- Translate buttons, dashboards, reports, and settings.
+- Translate accessible names for controls.
+- Translate onboarding instructions.
+- Keep all 22 languages selectable.
+- Do not leave visible TODO strings or untranslated keys.
+- Do not use machine translation APIs at runtime.
+- Store translation resources locally in the application.
+- Clearly document that agricultural and specialist terminology requires review by native speakers before public release.
+
+Set appropriate language and text direction attributes on the application root.
+
+Support right-to-left layouts for Arabic-script language settings, particularly Urdu. Design the layout using logical CSS properties so it can adapt to text direction.
+
+Use locale-aware date and number formatting.
+
+Save the language preference to the user's profile and restore it after sign-in.
+
+Changing languages must not change any underlying database records.
+
+Do not translate UUIDs, database identifiers, enum values, or stable crop codes.
+
+## 5. APPLICATION STRUCTURE
+
+Create these screens:
+
+1. Welcome and onboarding
+2. Sign up
+3. Sign in
+4. Forgot password
+5. Home dashboard
+6. My Farms
+7. Farm Details
+8. My Fields
+9. Crop Cycles
+10. Add or Edit Crop
+11. Farm Ledger
+12. Add Expense or Income
+13. Farm Calendar
+14. Add or Edit Task
+15. Inventory
+16. Add or Edit Inventory Item
+17. Inventory Movement History
+18. Reports
+19. Profile and Preferences
+20. Language Selection
+21. Data Export and Account Deletion
+22. Error, loading, and empty states
+
+Use a bottom navigation bar on small screens with these five sections:
+
+- Home
+- My Farm
+- Ledger
+- Calendar
+- More
+
+The More section should contain Inventory, Reports, Profile, Language, and Settings.
+
+On desktop, use a left sidebar or appropriately responsive navigation.
+
+## 6. WELCOME AND ONBOARDING
+
+Create a welcoming introductory page.
+
+Display:
+- KisanSetu logo
+- Product name
+- Short tagline
+- Language selector
+- Sign In button
+- Create Account button
+
+Keep the page simple and fast.
+
+Allow a user to choose a language before creating an account.
+
+After account creation, guide the user through:
+1. Entering their name.
+2. Choosing their preferred language.
+3. Selecting their state and district.
+4. Creating their first farm.
+5. Optionally registering their first field and crop.
+
+Allow the user to skip optional fields and complete them later.
+
+Do not demand precise GPS coordinates or location permissions.
+
+## 7. AUTHENTICATION WITH SUPABASE
+
+Use Supabase Auth for real user registration, login, logout, password reset, and authenticated sessions.
+
+Implement:
+- Email and password registration.
+- Email and password login.
+- Forgot password flow.
+- Sign out.
+- Session persistence.
+- Protected routes.
+- Clear authentication errors.
+- Loading states.
+- Email confirmation handling when enabled in Supabase.
+- Profile creation or completion after first sign-in.
+
+Do not use a hardcoded demo account in production.
+
+Never store a user's password in an application database table.
+
+If Supabase is not configured, show a clear configuration or demo-mode message rather than pretending that user registration or data persistence succeeded.
+
+## 8. SUPABASE CONNECTION
+
+Connect the application to Supabase using @supabase/supabase-js.
+
+Use environment variables:
+
+VITE_SUPABASE_URL=
+VITE_SUPABASE_PUBLISHABLE_KEY=
+
+Create:
+- src/lib/supabaseClient.ts
+- src/lib/auth.ts
+- src/services/
+- src/types/
+
+Validate configuration during startup.
+
+Provide a .env.example file containing empty placeholders, and a README explaining where to find the Supabase project URL and publishable key.
+
+Use only the public/publishable key intended for browser applications. Row Level Security must protect user data.
+
+NEVER expose:
+- Supabase service_role keys
+- Supabase secret keys
+- Database passwords
+- Private server credentials
+
+Do not put private credentials in source code.
+
+Do not use localStorage as the primary production database.
+
+All authenticated users' farm, crop, financial, task, and inventory records must be stored in Supabase.
+
+## 9. DATABASE SCHEMA
+
+Create a migration file named:
+
+supabase/migrations/001_initial_schema.sql
+
+Implement the following tables with correct UUID primary keys, relationships, indexes, timestamps, constraints, and row-level security.
+
+### A. profiles
+
+Fields:
+- id UUID primary key referencing auth.users(id)
+- full_name TEXT
+- preferred_language TEXT
+- state_code TEXT nullable
+- district_name TEXT nullable
+- created_at TIMESTAMPTZ
+- updated_at TIMESTAMPTZ
+
+Only the authenticated owner can access their private profile.
+
+### B. farms
+
+Fields:
+- id UUID primary key
+- owner_id UUID referencing auth.users(id)
+- name TEXT NOT NULL
+- state_code TEXT
+- district_name TEXT
+- village TEXT nullable
+- area NUMERIC
+- area_unit TEXT
+- notes TEXT nullable
+- created_at TIMESTAMPTZ
+- updated_at TIMESTAMPTZ
+
+A user can create multiple farms.
+
+### C. fields
+
+Fields:
+- id UUID primary key
+- owner_id UUID NOT NULL
+- farm_id UUID NOT NULL
+- name TEXT NOT NULL
+- area NUMERIC NOT NULL
+- area_unit TEXT NOT NULL
+- notes TEXT nullable
+- created_at TIMESTAMPTZ
+- updated_at TIMESTAMPTZ
+
+A field belongs to one farm. A user must not be able to attach a field to another user's farm.
+
+### D. crop_cycles
+
+Fields:
+- id UUID primary key
+- owner_id UUID NOT NULL
+- farm_id UUID NOT NULL
+- field_id UUID nullable
+- crop_name TEXT NOT NULL
+- variety TEXT nullable
+- season TEXT nullable
+- sowing_date DATE nullable
+- expected_harvest_date DATE nullable
+- actual_harvest_date DATE nullable
+- actual_yield NUMERIC nullable
+- yield_unit TEXT nullable
+- status TEXT NOT NULL
+- notes TEXT nullable
+- created_at TIMESTAMPTZ
+- updated_at TIMESTAMPTZ
+
+Supported status values:
+- planned
+- growing
+- harvested
+- cancelled
+
+Validate numeric quantities and dates.
+
+Allow custom crop names so farmers are not restricted to a small hardcoded catalogue.
+
+Ensure that a crop cycle can only reference a farm or field owned by the same user.
+
+### E. financial_entries
+
+Fields:
+- id UUID primary key
+- owner_id UUID NOT NULL
+- farm_id UUID NOT NULL
+- field_id UUID nullable
+- crop_cycle_id UUID nullable
+- entry_type TEXT NOT NULL
+- category TEXT NOT NULL
+- amount NUMERIC(12,2) NOT NULL
+- entry_date DATE NOT NULL
+- description TEXT nullable
+- payment_method TEXT nullable
+- created_at TIMESTAMPTZ
+- updated_at TIMESTAMPTZ
+
+Entry types:
+- expense
+- income
+
+Expense categories should include:
+- seeds
+- fertilizer
+- labour
+- irrigation
+- equipment
+- fuel
+- transport
+- land_rent
+- maintenance
+- other
+
+Income categories should include:
+- crop_sale
+- other_income
+
+Allow editing and deleting an entry with confirmation.
+
+All entries use INR in the first release.
+
+Reject invalid or non-positive entry amounts.
+
+### F. farm_tasks
+
+Fields:
+- id UUID primary key
+- owner_id UUID NOT NULL
+- farm_id UUID NOT NULL
+- field_id UUID nullable
+- crop_cycle_id UUID nullable
+- title TEXT NOT NULL
+- notes TEXT nullable
+- due_date DATE nullable
+- status TEXT NOT NULL
+- completed_at TIMESTAMPTZ nullable
+- created_at TIMESTAMPTZ
+- updated_at TIMESTAMPTZ
+
+Supported statuses:
+- pending
+- completed
+- cancelled
+
+Use real date comparisons to identify overdue tasks.
+
+Do not invent task deadlines or automatically prescribe pesticide schedules.
+
+### G. inventory_items
+
+Fields:
+- id UUID primary key
+- owner_id UUID NOT NULL
+- farm_id UUID NOT NULL
+- name TEXT NOT NULL
+- category TEXT NOT NULL
+- quantity NUMERIC(14,3) NOT NULL DEFAULT 0
+- unit TEXT NOT NULL
+- low_stock_threshold NUMERIC(14,3) NOT NULL DEFAULT 0
+- notes TEXT nullable
+- created_at TIMESTAMPTZ
+- updated_at TIMESTAMPTZ
+
+Inventory categories:
+- seeds
+- fertilizer
+- irrigation_supplies
+- tools
+- fuel
+- other
+
+Allow quantities such as kilograms, grams, litres, millilitres, packets, bags, or pieces. Do not automatically add quantities expressed in different units.
+
+### H. stock_movements
+
+Fields:
+- id UUID primary key
+- owner_id UUID NOT NULL
+- inventory_item_id UUID NOT NULL
+- movement_type TEXT NOT NULL
+- quantity_delta NUMERIC(14,3) NOT NULL
+- movement_date DATE NOT NULL
+- notes TEXT nullable
+- created_at TIMESTAMPTZ
+
+Movement types:
+- purchase
+- usage
+- adjustment
+- return
+
+Record stock changes with signed quantity deltas.
+
+The inventory movement history must be auditable.
+
+Do not allow arbitrary edits that silently rewrite past stock records. A correction should be recorded as a new adjustment.
+
+## 10. DATABASE SECURITY REQUIREMENTS
+
+Enable Row Level Security on every exposed user-data table.
+
+For profiles:
+- Users can read and update only their own profile.
+
+For farms, fields, crop_cycles, financial_entries, farm_tasks, inventory_items, and stock_movements:
+- SELECT policies must limit access to rows owned by auth.uid().
+- INSERT policies must verify owner_id = auth.uid().
+- UPDATE policies must verify ownership in both USING and WITH CHECK.
+- DELETE policies must restrict removal to the owner.
+- Users must never be able to transfer records to another owner.
+
+Use safe foreign-key relationships or database-side validation so that a malicious user cannot attach their records to a farm, field, crop cycle, or inventory item belonging to someone else.
+
+Do not trust owner_id values supplied by the UI.
+
+Every mutation must be protected by database permissions and RLS, not just hidden buttons in React.
+
+For inventory changes, create a transactional database function or equivalent server-side transaction that:
+1. Authenticates the current user.
+2. Verifies ownership of the inventory item.
+3. Locks or safely serializes changes to that item.
+4. Validates the movement type and resulting stock.
+5. Updates current quantity.
+6. Inserts a corresponding stock movement record.
+7. Rolls back all changes if any step fails.
+
+Use a secure function with explicit authorization checks and appropriate execution privileges.
+
+Do not expose service-role credentials to invoke privileged operations from the browser.
+
+Prevent accidental negative inventory unless a specific, deliberate adjustment workflow permits it.
+
+Make deletion behavior explicit. Before deleting a farm or crop, warn the user if associated financial entries, tasks, fields, or stock records will be affected. Do not silently destroy records.
+
+Generate any necessary SQL constraints, indexes, triggers, or functions.
+
+## 11. HOME DASHBOARD
+
+Create a clean, useful dashboard with data fetched from the authenticated user's real Supabase records.
+
+Summary cards:
+- Number of farms
+- Active crop cycles
+- Expenses recorded this month
+- Income recorded this month
+- Pending tasks
+- Overdue tasks
+- Low-stock inventory items
+
+Display a "Today's Farm Work" section.
+
+Show:
+- Tasks due today
+- Upcoming tasks
+- Overdue tasks
+- Relevant low-stock warnings
+
+Add quick-action buttons:
+- Add Expense
+- Add Income
+- Add Crop
+- Add Task
+- Add Inventory Item
+
+Use real calculations and queries.
+
+Do not hardcode statistics.
+
+For new users with no records, show an inviting empty state with a clear action to create their first farm.
+
+## 12. MY FARMS AND CROP MANAGEMENT
+
+Implement:
+- Create farm.
+- Edit farm.
+- View farm details.
+- Delete farm with confirmation and dependency checks.
+- Create and edit fields.
+- Register crop cycles.
+- Update crop status.
+- Record sowing date.
+- Record expected harvest date.
+- Record actual harvest date and yield.
+- Filter crop cycles by farm, field, crop name, season, and status.
+
+Use a simple step-by-step form for adding a crop.
+
+Do not provide unverified agricultural advice.
+
+If the user enters optional notes about cultivation practices, preserve those notes as user-supplied information rather than treating them as validated recommendations.
+
+## 13. FARM LEDGER
+
+Build a practical recordkeeping system.
+
+Allow users to:
+- Add expense.
+- Add income.
+- Edit entries.
+- Delete entries with confirmation.
+- View transaction history.
+- Search descriptions.
+- Filter by date range.
+- Filter by farm.
+- Filter by crop cycle.
+- Filter by expense or income category.
+- Export matching records.
+
+Create a large, simple form containing:
+- Type: Expense or Income
+- Amount in INR
+- Category
+- Date
+- Farm
+- Optional field
+- Optional crop cycle
+- Optional description
+
+Provide useful error messages.
+
+Use exact decimal-safe calculations for financial values.
+
+Dashboard formulas:
+
+Total expenses = sum of valid recorded expense amounts in the selected date range.
+
+Total income = sum of valid recorded income amounts in the selected date range.
+
+Recorded difference = recorded income minus recorded expenses.
+
+Crop-level recorded difference = linked crop-cycle income minus linked crop-cycle expenses.
+
+Always use explicit date-range rules and include dates in reports.
+
+Do not label the recorded difference as guaranteed net profit. Excluded or unrecorded costs may change the actual result.
+
+Do not count uncompleted or failed operations in report totals.
+
+## 14. FARM CALENDAR AND TASKS
+
+Create a calendar and list view.
+
+Features:
+- Create task.
+- Edit task.
+- Mark task complete.
+- Reopen a completed task if appropriate.
+- Cancel task.
+- Filter by date and status.
+- Associate a task with a farm, field, or crop cycle.
+- Display upcoming and overdue tasks.
+
+Let the farmer write their own task description.
+
+Provide optional example task templates such as:
+- Check irrigation
+- Purchase supplies
+- Inspect crops
+- Record harvest
+- Arrange transport
+
+Make it clear that these are generic task templates, not agronomic prescriptions.
+
+For version 1, use in-app reminders and dashboard indicators. Do not claim the app sends push notifications, SMS messages, or WhatsApp messages unless those capabilities have actually been implemented.
+
+## 15. FARM INVENTORY
+
+Build a stock management system.
+
+Features:
+- Create inventory item.
+- Edit item details.
+- Record stock purchase.
+- Record stock usage.
+- Record returned stock.
+- Record inventory adjustment.
+- View current quantity.
+- View threshold.
+- View movement history.
+- Show low-stock warnings.
+- Filter by category and farm.
+
+Low-stock rule:
+
+Current quantity <= low-stock threshold
+
+Use a clear warning badge and text description.
+
+The inventory quantity must be updated through the safe database operation described in the security requirements.
+
+If a stock movement fails, show an error and keep the screen consistent with the database. Do not show a fake successful result.
+
+## 16. REPORTS
+
+Build useful, easy-to-read reports.
+
+Reports should include:
+- Expenses by category.
+- Income by category.
+- Recorded income versus recorded expenses.
+- Crop-cycle financial summaries.
+- Harvest quantity summaries.
+- Inventory quantities.
+- Stock movement history.
+
+Provide date filters, farm filters, and crop filters where relevant.
+
+Use simple charts with readable labels and tables with totals.
+
+Make reports accessible on small screens.
+
+Implement CSV export using data the authenticated user is allowed to access.
+
+CSV export requirements:
+- Include clear column headings.
+- Format amounts and dates consistently.
+- Properly escape commas, quotation marks, and line breaks.
+- Prevent spreadsheet formula injection by safely handling user-controlled text fields beginning with characters such as =, +, -, or @.
+- Include selected date ranges in export metadata or filenames where appropriate.
+
+Do not display fake reports or fake sample numbers as real data.
+
+## 17. PROFILE AND SETTINGS
+
+Implement:
+- Edit full name.
+- Change preferred language.
+- View farm location settings.
+- Change password through the supported authentication workflow.
+- Sign out.
+- Export personal farm records.
+- Request account deletion.
+- Delete account and associated private records through a secure, documented process.
+
+Account deletion must not be implemented as an unprotected browser-side deletion of the auth user.
+
+Use a secure server-side process or a documented authenticated deletion workflow, with confirmation and appropriate handling of associated data.
+
+Explain what will be deleted before confirmation.
+
+## 18. USABILITY FOR FARMERS WITH LIMITED DIGITAL EXPERIENCE
+
+This is a major product requirement.
+
+Make every core task understandable with minimal reading.
+
+Use:
+- Large text labels.
+- Recognizable icons alongside text.
+- Simple vocabulary.
+- Short forms.
+- Large buttons.
+- Clear back navigation.
+- Helpful confirmation messages.
+- Empty-state instructions.
+- Human-reviewed language resources.
+- Helpful examples in input fields.
+- A simple numeric keypad for money and quantities on mobile.
+- Clear indicators for saved, pending, or failed actions.
+
+Do not assume all users can read English or are comfortable with complex dashboards.
+
+Do not force users to fill optional fields.
+
+Never delete entered form data silently when validation fails.
+
+Add a reusable "How to use this section" panel with short text instructions and an optional read-aloud button using browser-native speech synthesis where a suitable voice is available.
+
+Speech playback must use local browser capabilities and must not call any AI or external speech-generation API. Hide or disable the read-aloud control if the selected-language voice is unavailable.
+
+Do not ask users to share sensitive records publicly.
+
+## 19. ERROR HANDLING AND DATA RELIABILITY
+
+Every page with a network request must handle:
+- Loading state.
+- Success state.
+- Empty state.
+- Network failure.
+- Authentication expiry.
+- Permission errors.
+- Validation errors.
+- Duplicate submission.
+- Database constraint errors.
+
+Disable submit buttons while a request is in progress.
+
+Do not optimistically claim that data has been saved unless the operation succeeds.
+
+Refresh affected records after successful writes.
+
+Use safe form validation on both client and database sides.
+
+Handle slow or unavailable internet connections with clear messages.
+
+The MVP is online-only. Do not display an offline mode or claim that records synchronize offline unless it has actually been implemented and tested.
+
+Never swallow errors silently.
+
+## 20. PRIVACY AND DATA PROTECTION
+
+- All private records belong to authenticated users.
+- Never expose credentials or confidential environment variables.
+- Never put service-role keys in frontend code.
+- Apply database RLS to all private tables.
+- Do not store passwords in custom tables.
+- Validate ownership at the database layer.
+- Do not log passwords, tokens, or full private financial data to the console.
+- Ask permission before requesting optional browser capabilities.
+- Do not collect precise GPS coordinates by default.
+- Do not send private farm data to third-party analytics by default.
+- Document the handling of account deletion and personal data export.
+
+## 21. DATA INTEGRITY AND VALIDATION
+
+Create strict TypeScript interfaces matching the database schema.
+
+Validate:
+- Required farm names.
+- Positive farm and field areas.
+- Valid crop cycle dates.
+- Valid status values.
+- Positive monetary amounts.
+- Numeric inventory quantities.
+- Valid movement types.
+- Valid date ranges.
+- Valid foreign-key relationships.
+
+Prevent a crop cycle's expected harvest date from preceding its sowing date where both values are present.
+
+Prevent a stock movement from updating inventory owned by another user.
+
+Keep stock movements auditable.
+
+Use appropriate database precision for amounts and quantities.
+
+Ensure transaction totals match the stored entries.
+
+## 22. DESIGN DETAILS
+
+Use consistent reusable components:
+- AppShell
+- MobileBottomNavigation
+- DesktopSidebar
+- PageHeader
+- LanguageSelector
+- StatCard
+- FarmCard
+- CropCycleCard
+- TaskCard
+- InventoryItemCard
+- EmptyState
+- LoadingState
+- ErrorState
+- ConfirmDialog
+- FormField
+- CurrencyInput
+- QuantityInput
+- DateInput
+- StatusBadge
+- Toast or notification component
+
+Use accessible semantic HTML.
+
+Build forms that work on mobile browsers and desktop.
+
+Ensure the whole application is keyboard navigable.
+
+## 23. FILE ORGANIZATION
+
+Use a maintainable layout similar to:
+
+src/
+  app/
+  components/
+  features/
+    auth/
+    dashboard/
+    farms/
+    fields/
+    crops/
+    ledger/
+    tasks/
+    inventory/
+    reports/
+    settings/
+  hooks/
+  lib/
+    supabaseClient.ts
+    auth.ts
+  services/
+  locales/
+  types/
+  utils/
+  routes/
+
+supabase/
+  migrations/
+    001_initial_schema.sql
+
+.env.example
+README.md
+
+You may improve this structure if there is a good technical reason, but keep features, shared UI, database services, and localization separated.
+
+## 24. DEVELOPMENT AND ACCEPTANCE REQUIREMENTS
+
+Build incrementally and verify the working application after each major stage.
+
+Required implementation order:
+
+1. Initialize React, TypeScript, Vite, and styling.
+2. Build the responsive visual layout.
+3. Add the localization system.
+4. Implement Supabase connection and environment configuration.
+5. Create the SQL migration and security policies.
+6. Implement authentication.
+7. Build farms, fields, and crop cycles.
+8. Build financial entries and calculations.
+9. Build tasks and calendar views.
+10. Build inventory and safe stock movements.
+11. Build reports and CSV export.
+12. Complete settings, data export, and account deletion.
+13. Test translations, data isolation, validation, and responsive layouts.
+14. Fix compilation errors, broken routes, and console errors.
+
+Do not stop after generating the UI.
+
+Do not replace the database with mock arrays.
+
+Do not create buttons with no functionality.
+
+Do not claim Supabase is connected until the app successfully connects to a configured project.
+
+If configuration is missing, provide clear setup instructions and keep the rest of the application buildable.
+
+## 25. REQUIRED DELIVERABLES
+
+Generate all source files required for the application.
+
+Include:
+- Functional React frontend.
+- Reusable components.
+- Supabase client.
+- Authentication flows.
+- SQL migration.
+- RLS policies.
+- Database constraints and indexes.
+- Transaction-safe inventory operation.
+- All 22 language resource files.
+- .env.example.
+- README with Supabase setup instructions.
+- Testing instructions.
+- Database relationship documentation.
+- List of required environment variables.
+- Instructions to deploy the frontend and connect it to Supabase.
+- A checklist of translations requiring native-speaker review.
+
+Do not place real secrets in example files.
+
+Do not assume the developer already has a Supabase project.
+
+## 26. FINAL ACCEPTANCE TESTS
+
+Consider the build complete only after these behaviors have been implemented and tested as far as the available environment permits:
+
+1. A new user can register and sign in.
+2. The app loads the user's profile and saved language.
+3. The user can create multiple farms.
+4. The user can add fields and crop cycles.
+5. The user can record, edit, and delete financial entries.
+6. Dashboard totals are calculated from actual database records.
+7. The user can create tasks and mark them complete.
+8. The user can record inventory movements and see updated quantities.
+9. Low-stock warnings follow the selected threshold.
+10. CSV reports contain the correct filtered records.
+11. The user can change the application language.
+12. All 22 languages have their intended resource files and no missing visible translation keys.
+13. Right-to-left layouts render for applicable languages.
+14. One user cannot access another user's private records.
+15. Failed database operations never display a false success state.
+16. The production application makes no AI API calls.
+17. The application contains no hardcoded production credentials.
+18. The project includes all setup documentation.
+
+Prioritize reliability, clarity, accessibility, real persistence, secure data ownership, and correct calculations over unnecessary features.
+
+BEGIN BUILDING THE COMPLETE KISANSETU APPLICATION NOW.
